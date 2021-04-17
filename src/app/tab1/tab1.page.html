@@ -9,7 +9,7 @@
 <ion-content [fullscreen]="true">
   <ng-container *ngFor="let comic of comics | async">
     <ion-card *ngIf="comic.description">
-      <img src="{{comic.resourceURI}}">
+      <img src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}">
       <ion-card-header>
         <ion-card-title>{{comic.title}}</ion-card-title>
       </ion-card-header>
@@ -17,6 +17,5 @@
         {{comic.description}}
       </ion-card-content>
     </ion-card>
-
   </ng-container>
 </ion-content>

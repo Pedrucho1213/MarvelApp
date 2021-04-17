@@ -7,5 +7,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
+  <ng-container *ngFor="let series of serie | async">
+    <ion-card *ngIf="series.description">
+      <img src="{{series.thumbnail.path}}.{{series.thumbnail.extension}}">
+      <ion-card-header>
+        <ion-card-title>{{series.title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{series.description}}
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
 </ion-content>
